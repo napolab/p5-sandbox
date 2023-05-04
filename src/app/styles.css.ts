@@ -19,11 +19,30 @@ export const header = style({
 
 export const main = style({
   minHeight: calc.subtract("100vh", headerSize, footerSize),
+  height: "100%",
+
   "@supports": {
     "(min-height: 100dvh)": {
       minHeight: calc.subtract("100dvh", headerSize, footerSize),
     },
   },
+});
+
+export const section = style({
+  width: "100%",
+  height: calc.subtract("100vh", headerSize, footerSize),
+  display: "flex",
+  flexDirection: "column",
+
+  "@supports": {
+    "(height: 100dvh)": {
+      height: calc.subtract("100dvh", headerSize, footerSize),
+    },
+  },
+});
+export const canvas = style({
+  width: "100%",
+  height: calc.subtract("100vh", headerSize, footerSize),
 });
 
 export const footer = style({

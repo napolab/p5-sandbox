@@ -1,5 +1,7 @@
 import { memo } from "react";
 
+import P5Renderer from "@components/p5";
+import { sample } from "@p5/sketches";
 import { ThemeProvider } from "@theme/provider";
 
 import * as styles from "./styles.css";
@@ -10,8 +12,9 @@ const App = () => {
       <div className={styles.root}>
         <header className={styles.header}>header</header>
         <main className={styles.main}>
-          <section>
-            <h1>Hello Vite App</h1>
+          <section className={styles.section}>
+            <h1>p5 sandbox</h1>
+            <P5Renderer sketch={sample} className={styles.canvas} />
           </section>
         </main>
         <footer className={styles.footer}>footer</footer>

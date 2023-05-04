@@ -12,7 +12,9 @@
     "paths": {
       "@utils/*": ["src/utils/*"],
       "@theme/css": ["src/theme/styles.css.ts"],
-      "@theme/*": ["src/theme/*"]
+      "@theme/*": ["src/theme/*"],
+      "@p5/*": ["src/p5/*"],
+      "@components/*": ["src/components/*"]
     }
   },
   "include": ["src", "types"],
