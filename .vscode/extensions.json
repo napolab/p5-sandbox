@@ -14,6 +14,8 @@
     "christian-kohler.npm-intellisense",
     "christian-kohler.path-intellisense",
     "yoavbls.pretty-ts-errors",
-    "PKief.material-icon-theme"
+    "PKief.material-icon-theme",
+    "circledev.glsl-canvas",
+    "slevesque.shader"
   ]
 }

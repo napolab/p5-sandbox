@@ -3,5 +3,6 @@
   "editor.formatOnSave": false,
   "editor.codeActionsOnSave": {
     "source.fixAll": true
-  }
+  },
+  "glsl-canvas.extensions": ["EXT_shader_texture_lod"]
 }

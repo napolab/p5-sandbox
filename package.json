@@ -58,7 +58,8 @@
     "neverthrow": "^6.0.0",
     "p5": "^1.6.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-merge-refs": "^2.0.1"
   },
   "volta": {
     "node": "16.20.0",

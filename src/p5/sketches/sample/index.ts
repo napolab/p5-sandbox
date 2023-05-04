@@ -6,13 +6,7 @@ import type p5 from "p5";
 
 export const sketch: Sketch = (p) => {
   let renderer: p5.Renderer | undefined;
-  const resize = () => {
-    const parent = renderer?.parent();
-    if (!parent || !(parent instanceof HTMLElement)) return;
 
-    const { width, height } = parent.getBoundingClientRect();
-    p.resizeCanvas(width, height);
-  };
   const getSize = () => {
     const parent = renderer?.parent();
     if (!parent || !(parent instanceof HTMLElement)) return { width: p.width, height: p.height };
@@ -20,6 +14,10 @@ export const sketch: Sketch = (p) => {
     const { width, height } = parent.getBoundingClientRect();
 
     return { width, height };
+  };
+  const resize = () => {
+    const { width, height } = getSize();
+    p.resizeCanvas(width, height);
   };
 
   p.windowResized = () => resize();
@@ -32,7 +30,19 @@ export const sketch: Sketch = (p) => {
     p.shader(shader);
 
     const { width, height } = getSize();
-    shader.setUniform("resolution", [width, height]);
+    shader.setUniform("u_resolution", [width, height]);
+    shader.setUniform("u_time", 0);
+    p.quad(-1, -1, -1, 1, 1, 1, 1, -1);
+    p.resetShader();
+  };
+
+  p.draw = () => {
+    const shader = p.createShader(vert, frag);
+    p.shader(shader);
+    const { width, height } = getSize();
+    shader.setUniform("u_resolution", [width, height]);
+    shader.setUniform("u_time", p.frameCount / 60);
+    p.shader(shader);
     p.quad(-1, -1, -1, 1, 1, 1, 1, -1);
     p.resetShader();
   };
