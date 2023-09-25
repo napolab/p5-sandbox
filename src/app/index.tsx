@@ -1,7 +1,7 @@
 import { memo } from "react";
 
 import P5Renderer from "@components/p5";
-import { helloWorld } from "@p5/sketches";
+import { lerp } from "@p5/sketches";
 import { ThemeProvider } from "@theme/provider";
 
 import * as styles from "./styles.css";
@@ -14,7 +14,7 @@ const App = () => {
         <main className={styles.main}>
           <section className={styles.section}>
             <h1>p5 sandbox</h1>
-            <P5Renderer sketch={helloWorld} className={styles.canvas} />
+            <P5Renderer sketch={lerp} className={styles.canvas} />
           </section>
         </main>
         <footer className={styles.footer}>footer</footer>
